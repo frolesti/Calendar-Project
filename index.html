@@ -5,9 +5,34 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Calendar</title>
 </head>
+<header>
+    <h1>Calendar</h1>
+    <button type="submit" class="addEventBtn">Add a new event</button>
+</header>
 <body>
     <div class="container">
-        <button type="submit" class="addEventBtn">Add a new event</button>
+        <div class="calendar">
+            <div class="calendar__info">
+                <div class="calendar__prev" id="prev-month">&#9664;</div>
+                <div class="calendar__month" id="month"></div>
+                <div class="calendar__year" id="year"></div>
+                <div class="calendar__next" id="next-month">&#9654;</div>
+            </div>
+            <div class="calendar__week">
+                <div class="calendar__day calendar__item">Mon</div>
+                <div class="calendar__day calendar__item">Tue</div>
+                <div class="calendar__day calendar__item">Wed</div>
+                <div class="calendar__day calendar__item">Thu</div>
+                <div class="calendar__day calendar__item">Fri</div>
+                <div class="calendar__day calendar__item">Sat</div>
+                <div class="calendar__day calendar__item">Sun</div>
+            </div>
+            <div class="calendar__dates" id="dates"></div>
+        </div>
+            </div>
+        </div>
+        <div></div>
+        
         <!--Forms div con display: none-->
     <!--Cambiará el display cuando inicies la creación de un evento-->
         <div class="form-container">
@@ -68,5 +93,6 @@
         </div>
     </div>
 <script src="assets/js/showhide.js"></script>
+<script src="/assets/main.js"></script>
 </body>
 </html>
