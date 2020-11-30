@@ -31,8 +31,8 @@ p{
 /*Forms styling---START*/
 
 .form-container {
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 90%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -40,8 +40,12 @@ p{
     justify-content: right;
     background-color: burlywood;
 
-    display: none;
+    display: visible;
     
+}
+
+form > * {
+    margin: 5px;
 }
 form {
     position: absolute;
@@ -59,9 +63,17 @@ input, textarea{
     height: 20px;
     width: 20px;
     position: absolute;
-    top: -40px;
-    left: 300px;
+    top: -20px;
+    left: 250px;
     color: brown;
+}
+
+#btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 25px 0px;
 }
 /*Form styling---END*/
 
