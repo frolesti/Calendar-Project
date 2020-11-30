@@ -1,6 +1,7 @@
 let monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October', 'November', 'December'];
 
 let currentDate = new Date();
+let currentMonth= currentDate.getMonth();
 let currentDay = currentDate.getDate();
 let monthNumber = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
@@ -30,7 +31,7 @@ const writeMonth = (month) => {
     }
 
     for(let i=1; i<=getTotalDays(month); i++){
-        if(i===currentDay) {
+        if(i===currentDay && monthNames[currentMonth]===monthNames[month]) {
             dates.innerHTML += ` <div class="calendar__date calendar__item calendar__today">
             <p>${i}</p>
             <div class="events__area"></div>
