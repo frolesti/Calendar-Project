@@ -9,7 +9,19 @@ function closeModal() {
 
 //Funciones para guardar la información del formulario
 
-let events = [];
+let events = [{
+    name: "polloloco",
+    initialDate:"2020-11-29",
+    finalDate:"2020-11-30"
+},{
+    name: "pollocuerdo",
+    initialDate:"2020-11-01",
+    finalDate:"2020-11-05"
+},{
+    name: "pollito",
+    initialDate:"2020-10-28",
+    finalDate:""
+}];
 const addEventInfo = (ev) => {
     ev.preventDefault();
     let eventInfo = {
