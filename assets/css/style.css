@@ -3,16 +3,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-/*Event button*/
-
-.addEventBtn {
-    position: absolute;
-    width: 150px;
-    top: 20px;
-    left: 40%;
+p{
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+}
+
+.btn__event{
+    width: 44px;
+    height: 44px;
+    border: 0;
+    font-size: 30px;
+    color: #3c4043;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+}
+
 /*Forms styling---START*/
 
 .form-container {
@@ -52,18 +67,16 @@ input, textarea{
 
 
  /*Calendar styling---START*/
- .header{
-    display: flex;
-    justify-content: space-around;
-    height: 10%;
-}
-.calendar{
+
+ .calendar{
     height: 80%;
 }
 .calendar__info{
     display: flex;
+    justify-content: space-around;
     height: 5%;
-    justify-content: center;
+    text-transform: uppercase;
+    color: #3c4043;
 }
 .calendar__week{
     display: flex;
@@ -74,15 +87,24 @@ input, textarea{
     display: grid;
     height: 100%;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5,1fr);
-    border: 1px solid grey;
-    gap: 10px;
+    grid-template-rows: repeat(6,1fr);
 }
 .calendar__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 15px;
+    border: 1px solid grey;
+}
+.calendar__today p{
+    border-radius:50% ;
+    display: inline-block;
+    background-color: red;
+    width: 20%;
     text-align: center;
+    color: white;
 }
 .events__area{
     height: 15%;
 }
-
 /*Calendar styling---END*/
