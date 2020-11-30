@@ -5,7 +5,9 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
+body{
+    background-color: #fff;
+}
 p{
     margin-block-start: 0;
     margin-block-end: 0;
@@ -16,6 +18,7 @@ p{
     justify-content: space-around;
     align-items: center;
     height: 10%;
+    color: #5f6368;;
 }
 
 .btn__event{
@@ -23,7 +26,6 @@ p{
     height: 44px;
     border: 0;
     font-size: 30px;
-    color: #3c4043;
     border-radius: 50%;
     background-color: rgba(255,255,255,0.5);
 }
@@ -39,9 +41,7 @@ p{
     transform: translate(-50%, -50%);
     justify-content: right;
     background-color: burlywood;
-
     display: none;
-    
 }
 form {
     position: absolute;
@@ -76,6 +76,7 @@ input, textarea{
     justify-content: space-around;
     height: 5%;
     text-transform: uppercase;
+    font-weight: bold;
     color: #3c4043;
 }
 .calendar__week{
@@ -88,13 +89,16 @@ input, textarea{
     height: 100%;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6,1fr);
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
 }
 .calendar__item{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-left: 15px;
-    border: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
 }
 .calendar__today p{
     border-radius:50% ;
@@ -106,5 +110,10 @@ input, textarea{
 }
 .events__area{
     height: 15%;
+}
+.calendar__next, .calendar__prev{
+    font-size: 30px;
+    cursor: pointer;
+    color: #3c4043;
 }
 /*Calendar styling---END*/
