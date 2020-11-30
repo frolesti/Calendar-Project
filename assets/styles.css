@@ -40,13 +40,16 @@ p{
     height: 100%;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6,1fr);
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
 }
 .calendar__item{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-left: 15px;
-    border: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
 }
 .calendar__today p{
     border-radius:50% ;
