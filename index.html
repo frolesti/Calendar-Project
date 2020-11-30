@@ -4,11 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
     <link rel="stylesheet" href="/assets/styles.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <h1 class="title_calendar">Calendar JS</h1>
-        <button class="add_event">add event</button>
+        <h1 class="title__calendar">Calendar JS</h1>
+        <button class="btn__event"><i class='bx bx-calendar-event'></i></button>
     </header>
     <div class="calendar">
         <div class="calendar__info">
@@ -18,13 +21,13 @@
             <div class="calendar__next" id="next-month">&#9654;</div>
         </div>
         <div class="calendar__week">
-            <div class="calendar__day calendar__item">Mon</div>
-            <div class="calendar__day calendar__item">Tue</div>
-            <div class="calendar__day calendar__item">Wed</div>
-            <div class="calendar__day calendar__item">Thu</div>
-            <div class="calendar__day calendar__item">Fri</div>
-            <div class="calendar__day calendar__item">Sat</div>
-            <div class="calendar__day calendar__item">Sun</div>
+            <div class="calendar__day">Mon</div>
+            <div class="calendar__day">Tue</div>
+            <div class="calendar__day">Wed</div>
+            <div class="calendar__day">Thu</div>
+            <div class="calendar__day">Fri</div>
+            <div class="calendar__day">Sat</div>
+            <div class="calendar__day">Sun</div>
         </div>
         <div class="calendar__dates" id="dates"></div>
     </div>
