@@ -1,16 +1,23 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
 p{
     margin-block-start: 0;
     margin-block-end: 0;
 }
-*{
-    font-family: 'Roboto', sans-serif;
-}
+
 .header{
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 10%;
 }
+
 .btn__event{
     width: 44px;
     height: 44px;
@@ -20,7 +27,48 @@ p{
     border-radius: 50%;
     background-color: rgba(255,255,255,0.5);
 }
-.calendar{
+
+/*Forms styling---START*/
+
+.form-container {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: right;
+    background-color: burlywood;
+
+    display: none;
+    
+}
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input, textarea{
+    border: 2px ridge;
+    border-radius: 5px;
+}
+
+#closeTag {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: -40px;
+    left: 300px;
+    color: brown;
+}
+/*Form styling---END*/
+
+
+ /*Calendar styling---START*/
+
+ .calendar{
     height: 80%;
 }
 .calendar__info{
@@ -62,3 +110,4 @@ p{
 .events__area{
     height: 15%;
 }
+/*Calendar styling---END*/
