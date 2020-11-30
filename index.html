@@ -9,10 +9,6 @@
 
     <title>Calendar</title>
 </head>
-<header>
-    <h1>Calendar</h1>
-    <button type="submit" class="addEventBtn">Add a new event</button>
-</header>
 <body>
     <header class="header">
         <h1 class="title__calendar">Calendar JS</h1>
@@ -34,11 +30,13 @@
             <div class="calendar__day">Sat</div>
             <div class="calendar__day">Sun</div>
         </div>
-        <div></div>
+
+        <div class="calendar__dates" id="dates"></div>
+    </div>
         
         <!--Forms div con display: none-->
     <!--Cambiará el display cuando inicies la creación de un evento-->
-        <div class="form-container">
+    <div class="form-container">
             <form>
                 <!--Closing tab-->
                 <button>
@@ -93,9 +91,8 @@
 
             <!--Div con la ventana pop-up resumen del evento-->
             <div class="event-info"></div>
-        </div>
     </div>
 <script src="assets/js/showhide.js"></script>
-<script src="/assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
