@@ -11,7 +11,7 @@ function closeModal() {
 
 let events = [{
     name: "polloloco",
-    initialDate:"2020-11-29",
+    initialDate:"2020-11-30",
     finalDate:"2020-11-30",
     eventType:"meeting"
 },{
@@ -21,9 +21,14 @@ let events = [{
     eventType:"personal"
 },{
     name: "pollito",
-    initialDate:"2020-10-28",
+    initialDate:"2020-12-28",
     finalDate:"",
     eventType:"study",
+},{
+    name: "pollito2",
+    initialDate:"2020-12-28",
+    finalDate:"",
+    eventType:"other",
 }];
 const addEventInfo = (ev) => {
     ev.preventDefault();
@@ -36,7 +41,7 @@ const addEventInfo = (ev) => {
         eventType:document.getElementById("eventType").value
     }
     events.push(eventInfo);
-    //localStorage.setItem("events",JSON.stringify(events)) to improve
+    localStorage.setItem("events",JSON.stringify(events))
     document.querySelector("form").reset();
 }
 
