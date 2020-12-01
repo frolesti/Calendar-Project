@@ -18,16 +18,20 @@ p{
     justify-content: space-around;
     align-items: center;
     height: 10%;
-    color: #5f6368;;
+    color: #1c0d02;;
 }
 
-.btn__event{
+.header button{
     width: 44px;
     height: 44px;
+    cursor: pointer;
     border: 0;
     font-size: 30px;
     border-radius: 50%;
     background-color: rgba(255,255,255,0.5);
+}
+.header button:focus{
+    outline: 0;
 }
 
 /*Forms styling---START*/
@@ -140,17 +144,46 @@ input, textarea{
 
 /*Events styling---START*/
 .events__area p{
+    font-size: 1rem;
     border-radius: 5%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 130px;
 }
-.meeting{
-    background-color: yellow;
+.meeting::before{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 2px;
+    border-radius: 7.5px;
+    background-color: #69b6d5;
 }
-.personal{
+.personal::before{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 2px;
+    border-radius: 7.5px;
     background-color: green;
+    white-space: nowrap;
 }
-.study{
-    background-color: pink;
+.study::before{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 2px;
+    border-radius: 7.5px;
+    background-color: purple;
 }
-.other{
+.other::before{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 2px;
+    border-radius: 7.5px;
     background-color: grey;
 }
