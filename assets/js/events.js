@@ -6,21 +6,21 @@ const printEvent=()=>{
     monthEvents.forEach(e=>{
         if(e.initialDate.slice(8,9)==="0"){
             for(day of daysCurrentMonth){
-                if(e.initialDate.slice(9)===day.children[0].textContent){
-                    day.children[1].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
+                if(e.initialDate.slice(9)===day.children[1].textContent){
+                    day.children[2].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
                 }}
         }else{
             for(day of daysCurrentMonth){
-            if(e.initialDate.slice(8)===day.children[0].textContent){
-                day.children[1].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
+            if(e.initialDate.slice(8)===day.children[1].textContent){
+                day.children[2].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
             }
             }
         }
     })
     lastMonthEvents.forEach(e=>{
             for(lastDay of daysLastMonth){
-                if(e.initialDate.slice(8)===lastDay.children[0].textContent){
-                    lastDay.children[1].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
+                if(e.initialDate.slice(8)===lastDay.children[1].textContent){
+                    lastDay.children[2].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
                 }
             }
         })

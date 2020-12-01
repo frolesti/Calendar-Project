@@ -1,6 +1,7 @@
 let monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October', 'November', 'December'];
 
 let currentDate = new Date();
+let yearSticky= currentDate.getFullYear();
 let currentMonth= currentDate.getMonth();
 let currentDay = currentDate.getDate();
 let monthNumber = currentDate.getMonth();
@@ -12,7 +13,8 @@ let year = document.getElementById('year');
 
 let prevMonthDOM = document.getElementById('prev-month');
 let nextMonthDOM = document.getElementById('next-month');
-let btnToday=document.querySelector(".btn__today")
+let btnToday=document.querySelector(".btn__today");
+let btnsNew;
 
 month.textContent = monthNames[monthNumber];
 year.textContent = currentYear.toString();
@@ -34,25 +36,29 @@ const writeMonth = (month) => {
 
     for(let i = startDay(); i>0;i--){
         dates.innerHTML += ` <div class="calendar__item calendar__last-days">
+            <button class="btn__new" onclick="btnAddEvent(${currentYear},${monthNumber-1},${getTotalDays(monthNumber-1)-(i-1)})"><i class='bx bx-calendar-plus'></i></button>
             <p class="calendar__date">${getTotalDays(monthNumber-1)-(i-1)}</p>
             <div class="events__area"></div>
         </div>`;
     }
 
     for(let i=1; i<=getTotalDays(month); i++){
-        if(i===currentDay && monthNames[currentMonth]===monthNames[month]) {
+        if(i===currentDay && monthNames[currentMonth]===monthNames[month] && currentYear===yearSticky) {
             dates.innerHTML += ` <div class="calendar__item calendar__month-days calendar__today">
+            <button class="btn__new" onclick="btnAddEvent(${currentYear},${monthNumber},${i})"><i class='bx bx-calendar-plus'></i></button>
             <p class="calendar__date">${i}</p>
             <div class="events__area"></div>
             </div>`;
         }else{
             dates.innerHTML += ` <div class="calendar__item calendar__month-days">
+            <button class="btn__new" onclick="btnAddEvent(${currentYear},${monthNumber},${i})"><i class='bx bx-calendar-plus'></i></button>
             <p class="calendar__date">${i}</p>
             <div class="events__area"></div>
             </div>`;
         }
     }
     printEvent(month)
+    btnsNew=document.querySelectorAll(".btn__new")
 }
 
 const getTotalDays = month => {
