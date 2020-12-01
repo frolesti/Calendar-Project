@@ -12,15 +12,24 @@ let year = document.getElementById('year');
 
 let prevMonthDOM = document.getElementById('prev-month');
 let nextMonthDOM = document.getElementById('next-month');
+let btnToday=document.querySelector(".btn__today")
 
 month.textContent = monthNames[monthNumber];
 year.textContent = currentYear.toString();
 
 prevMonthDOM.addEventListener('click', ()=>lastMonth());
 nextMonthDOM.addEventListener('click', ()=>nextMonth());
+btnToday.addEventListener('click', ()=>goToday());
 
-events=JSON.parse(localStorage.getItem("events"));
-
+//events=JSON.parse(localStorage.getItem("events"))
+const goToday = () => {
+    let today = new Date();
+    currentMonth= today.getMonth();
+    currentDay = today.getDate();
+    monthNumber = today.getMonth();
+    currentYear = today.getFullYear();
+    setNewDate();
+}
 const writeMonth = (month) => {
 
     for(let i = startDay(); i>0;i--){

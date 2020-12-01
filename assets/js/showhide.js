@@ -22,7 +22,7 @@ document.querySelector(".clickable_time").addEventListener("click", ()=>{
 
 let events = [{
     name: "polloloco",
-    initialDate:"2020-11-29",
+    initialDate:"2020-11-30",
     finalDate:"2020-11-30",
     eventType:"meeting"
 },{
@@ -32,9 +32,14 @@ let events = [{
     eventType:"personal"
 },{
     name: "pollito",
-    initialDate:"2020-10-28",
+    initialDate:"2020-12-28",
     finalDate:"",
     eventType:"study",
+},{
+    name: "pollito2",
+    initialDate:"2020-12-28",
+    finalDate:"",
+    eventType:"other",
 }];
 const addEventInfo = (ev) => {
     ev.preventDefault();
@@ -46,10 +51,8 @@ const addEventInfo = (ev) => {
         description: document.getElementById("description").value,
         eventType:document.getElementById("eventType").value
     }
-    if(ev.name === null || ev.initialDate === null){document.querySelector("form").reset();}
-    else {events.push(eventInfo);}
-    
-    localStorage.setItem("events", JSON.stringify(events));
+    events.push(eventInfo);
+    localStorage.setItem("events",JSON.stringify(events))
     document.querySelector("form").reset();
 }
 
