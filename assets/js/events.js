@@ -7,28 +7,26 @@ const printEvent=()=>{
         if(e.initialDate.slice(8,9)==="0"){
             for(day of daysCurrentMonth){
                 if(e.initialDate.slice(9)===day.children[0].textContent){
-                    day.children[1].insertAdjacentHTML("afterbegin",`<p class="${e.eventType}">${e.name}</p>`)
+                    day.children[1].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
                 }}
         }else{
             for(day of daysCurrentMonth){
             if(e.initialDate.slice(8)===day.children[0].textContent){
-                day.children[1].insertAdjacentHTML("afterbegin",`<p class="${e.eventType}">${e.name}</p>`)
+                day.children[1].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
             }
             }
         }
     })
     lastMonthEvents.forEach(e=>{
-            console.log("eeee")
             for(lastDay of daysLastMonth){
                 if(e.initialDate.slice(8)===lastDay.children[0].textContent){
-                    lastDay.children[1].insertAdjacentHTML("afterbegin",`<p class="${e.eventType}">${e.name}</p>`)
+                    lastDay.children[1].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
                 }
             }
         })
 
 }
 function filterLastMonth(e){
-    console.log(e)
     if(monthNumber=== 0){
         if(parseInt(e.initialDate.slice(0,4))===currentYear-1){
             return parseInt(e.initialDate.slice(5,7))===12
@@ -37,7 +35,6 @@ function filterLastMonth(e){
     }else{
         if(parseInt(e.initialDate.slice(0,4))===currentYear){
             if((parseInt(e.initialDate.slice(5,7))===monthNumber)){
-                console.log("por qui")
                 return true
             }
             return false
