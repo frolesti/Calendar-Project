@@ -198,3 +198,12 @@ input, textarea{
     border-radius: 7.5px;
     background-color: grey;
 }
+/*EVENTS STYLING---END*/
+.btn__new{
+    position: absolute;
+    visibility: hidden;
+}
+
+.visibility{
+    visibility: visible;
+}
