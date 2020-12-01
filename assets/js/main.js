@@ -32,17 +32,18 @@ const writeMonth = (month) => {
 
     for(let i=1; i<=getTotalDays(month); i++){
         if(i===currentDay && monthNames[currentMonth]===monthNames[month]) {
-            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__today">
+            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__month-days calendar__today">
             <p>${i}</p>
             <div class="events__area"></div>
             </div>`;
         }else{
-            dates.innerHTML += ` <div class="calendar__date calendar__item">
+            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__month-days">
             <p>${i}</p>
             <div class="events__area"></div>
             </div>`;
         }
     }
+    printEvent(month)
 }
 
 const getTotalDays = month => {
