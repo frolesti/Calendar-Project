@@ -31,17 +31,16 @@ p{
 }
 
 /*Forms styling---START*/
-
-.form-container {
+#form-container {
     width: 70%;
-    height: 90%;
+    height: 95%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     justify-content: right;
-    background-color: burlywood;
-
+    background-color: rgb(255, 233, 200);
+    
     display: none;
 }
 
@@ -53,6 +52,7 @@ form {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: auto;
 }
 
 input, textarea{
@@ -76,6 +76,14 @@ input, textarea{
     width: 100%;
     padding: 25px 0px;
 }
+
+#endDate_div {
+    visibility: hidden;
+}
+#time_div{
+     visibility: hidden;
+ }
+
 /*Form styling---END*/
 
 

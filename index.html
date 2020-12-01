@@ -12,7 +12,7 @@
 <body>
     <header class="header">
         <h1 class="title__calendar">Calendar JS</h1>
-        <button class="btn__event"><i class='bx bx-calendar-event'></i></button>
+        <button id="btn__event"><i class='bx bx-calendar-event'></i></button>
     </header>
     <div class="calendar">
         <div class="calendar__info">
@@ -36,35 +36,40 @@
         
         <!--Forms div con display: none-->
     <!--Cambiará el display cuando inicies la creación de un evento-->
-    <div class="form-container">
+    <div id="form-container">
             <form>
                 <!--Closing tab-->
                 <button id="closeTag" type="button">X</button>
                 <!--Closing tab-->
 
                 <label for="eventName">Title:</label>
-                <input type="text" id="eventName" placeholder="Event Name" required maxlength="60"><br>
+                <input type="text" id="eventName" placeholder="Event Name" maxlength="60" required><br>
             
                 <label for="initialDate">Initial Date:</label>
                 <input type="date" id="initialDate" required><br>
             
-                <input type="checkbox" id="endDateCheck" name="endDateCheck">
+                <input type="checkbox" class="clickable_date" id="endDateCheck" name="endDateCheck">
                 <label for="endDateCheck">End date</label><br>
             
-                <label for="endDate">End Date:</label>
-                <input type="date" id="endDate" optional><br>
+                <div class="showOnClick" id="endDate_div">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate">
+                </div><br>
             
-                <input type="checkbox" id="timeCheck" name="timeCheck">
+                <input type="checkbox" class="clickable_time" id="timeCheck" name="timeCheck">
                 <label for="timeCheck">Remind me when this event expires</label><br>
             
-                <label for="time">Time:</label>
-                <select name="time" id="time" optional>
-                    <option value="5min">5 min</option>
-                    <option value="10min">10 min</option>
-                    <option value="15min">15 min</option>
-                    <option value="30min">30 min</option>
-                    <option value="1h">1 hour</option>
-                </select><br>
+                <div class="showOnClick" id="time_div">
+                    <label class="showOnClick" for="time">Time:</label>
+                    <select class="showOnClick" name="time" id="time" optional>
+                        <option value="5min">5 min</option>
+                        <option value="10min">10 min</option>
+                        <option value="15min">15 min</option>
+                        <option value="30min">30 min</option>
+                        <option value="1h">1 hour</option>
+                    </select>
+                </div><br>
+                
             
                 <label for="description">Description:</label><br>
                 <textarea name="description" id="description" cols="30" rows="7" maxlength="500"></textarea><br>

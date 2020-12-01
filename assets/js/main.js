@@ -19,7 +19,7 @@ year.textContent = currentYear.toString();
 prevMonthDOM.addEventListener('click', ()=>lastMonth());
 nextMonthDOM.addEventListener('click', ()=>nextMonth());
 
-//events=JSON.parse(localStorage.getItem("events")) to improve
+events=JSON.parse(localStorage.getItem("events"));
 
 const writeMonth = (month) => {
 
