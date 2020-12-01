@@ -38,7 +38,7 @@
         <!--Forms div con display: none-->
     <!--Cambiará el display cuando inicies la creación de un evento-->
     <div id="form-container">
-            <form>
+            <form id="event_form">
                 <!--Closing tab-->
                 <button id="closeTag" type="button">X</button>
                 <!--Closing tab-->
@@ -50,17 +50,17 @@
                 <input type="date" id="initialDate" required><br>
             
                 <input type="checkbox" class="clickable_date" id="endDateCheck" name="endDateCheck">
-                <label for="endDateCheck">End date</label><br>
+                <label for="endDateCheck">Add end date</label><br>
             
-                <div class="showOnClick" id="endDate_div">
+                <div class="endDate_div">
                     <label for="endDate">End Date:</label>
                     <input type="date" id="endDate">
-                </div><br>
+                </div>
             
                 <input type="checkbox" class="clickable_time" id="timeCheck" name="timeCheck">
-                <label for="timeCheck">Remind me when this event expires</label><br>
+                <label for="timeCheck">Do you want to add a reminder?</label><br>
             
-                <div class="showOnClick" id="time_div">
+                <div class="time_div">
                     <label class="showOnClick" for="time">Time:</label>
                     <select class="showOnClick" name="time" id="time" optional>
                         <option value="5min">5 min</option>
@@ -69,7 +69,7 @@
                         <option value="30min">30 min</option>
                         <option value="1h">1 hour</option>
                     </select>
-                </div><br>
+                </div>
                 
             
                 <label for="description">Description:</label><br>

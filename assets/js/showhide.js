@@ -1,19 +1,25 @@
 //Funciones para abrir y cerrar la ventana de los eventos
-document.getElementById("btn__event").addEventListener("click", ()=>{
+document.querySelector(".btn__event").addEventListener("click", ()=>{
     document.getElementById("form-container").style.display = "initial";
 });
 
+//solucionar problemas con la accesibilidad de los divs ocultos
 document.getElementById("closeTag").addEventListener("click", ()=>{
+    document.getElementById("event_form").reset();
     document.getElementById("form-container").style.display = "none";
-});
+})
+
+document.getElementById("cancelBtn").addEventListener("click", ()=>{
+    document.getElementById("form-container").style.display = "none";
+})
 
 //Show options in form event
 document.querySelector(".clickable_date").addEventListener("click", ()=>{
-    document.getElementById("endDate_div").style.visibility = "visible";
+    document.querySelector(".endDate_div").classList.toggle("show_div");
 });
 
 document.querySelector(".clickable_time").addEventListener("click", ()=>{
-    document.getElementById("time_div").style.visibility = "visible";
+    document.querySelector(".time_div").classList.toggle("show_div");
 });
 
 //Validadores

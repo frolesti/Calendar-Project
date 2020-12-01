@@ -43,7 +43,7 @@ p{
     top: 50%;
     transform: translate(-50%, -50%);
     justify-content: right;
-    background-color: rgb(255, 233, 200);
+    background-color: rgb(255, 245, 231);
     
     display: none;
 }
@@ -81,13 +81,16 @@ input, textarea{
     padding: 25px 0px;
 }
 
-#endDate_div {
-    visibility: hidden;
+.endDate_div {
+    display: none;
 }
-#time_div{
-     visibility: hidden;
+.time_div{
+     display: none;
  }
 
+.show_div{
+    display: block;
+}
 /*Form styling---END*/
 
 
