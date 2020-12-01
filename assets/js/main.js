@@ -19,26 +19,26 @@ year.textContent = currentYear.toString();
 prevMonthDOM.addEventListener('click', ()=>lastMonth());
 nextMonthDOM.addEventListener('click', ()=>nextMonth());
 
-
+//events=JSON.parse(localStorage.getItem("events")) to improve
 
 const writeMonth = (month) => {
 
     for(let i = startDay(); i>0;i--){
-        dates.innerHTML += ` <div class="calendar__date calendar__item calendar__last-days">
-            <p>${getTotalDays(monthNumber-1)-(i-1)}</p>
+        dates.innerHTML += ` <div class="calendar__item calendar__last-days">
+            <p class="calendar__date">${getTotalDays(monthNumber-1)-(i-1)}</p>
             <div class="events__area"></div>
         </div>`;
     }
 
     for(let i=1; i<=getTotalDays(month); i++){
         if(i===currentDay && monthNames[currentMonth]===monthNames[month]) {
-            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__month-days calendar__today">
-            <p>${i}</p>
+            dates.innerHTML += ` <div class="calendar__item calendar__month-days calendar__today">
+            <p class="calendar__date">${i}</p>
             <div class="events__area"></div>
             </div>`;
         }else{
-            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__month-days">
-            <p>${i}</p>
+            dates.innerHTML += ` <div class="calendar__item calendar__month-days">
+            <p class="calendar__date">${i}</p>
             <div class="events__area"></div>
             </div>`;
         }

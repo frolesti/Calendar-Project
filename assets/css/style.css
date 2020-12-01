@@ -6,7 +6,7 @@
     font-family: 'Roboto', sans-serif;
 }
 body{
-    background-color: #fff;
+    background-color: #ffffff;
 }
 p{
     margin-block-start: 0;
@@ -43,7 +43,6 @@ p{
     background-color: burlywood;
 
     display: none;
-    
 }
 
 form > * {
@@ -80,10 +79,13 @@ input, textarea{
 /*Form styling---END*/
 
 
- /*Calendar styling---START*/
+/*Calendar styling---START*/
 
- .calendar{
-    height: 80%;
+.calendar{
+    height: 90%;
+    align-items: center;
+    font-size: 20;
+    font-weight: 500;
 }
 .calendar__info{
     display: flex;
@@ -91,7 +93,7 @@ input, textarea{
     height: 5%;
     text-transform: uppercase;
     font-weight: bold;
-    color: #3c4043;
+    color: #18171c;
 }
 .calendar__week{
     display: flex;
@@ -103,31 +105,52 @@ input, textarea{
     height: 100%;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6,1fr);
-    border-left: 1px solid grey;
-    border-top: 1px solid grey;
+    gap: 5px;
+}
+.calendar__date{
+    background-color: #001326;
+    border-top-right-radius: 10%;
+    border-top-left-radius: 10%;
+    text-align: center;
+    color: white;
 }
 .calendar__item{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-left: 15px;
-    border-right: 1px solid grey;
-    border-bottom: 1px solid grey;
 }
 .calendar__today p{
-    border-radius:50% ;
-    display: inline-block;
-    background-color: red;
-    width: 20%;
-    text-align: center;
-    color: white;
+    background-color:#e51a4c;
+}
+.calendar__last-days{
+    opacity: 0.6;
 }
 .events__area{
-    height: 15%;
+    height: 100%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    background-color: #ffecd9;
 }
 .calendar__next, .calendar__prev{
     font-size: 30px;
     cursor: pointer;
-    color: #3c4043;
+    color: #18171c;
 }
 /*Calendar styling---END*/
+
+/*Events styling---START*/
+.events__area p{
+    border-radius: 5%;
+}
+.meeting{
+    background-color: yellow;
+}
+.personal{
+    background-color: green;
+}
+.study{
+    background-color: pink;
+}
+.other{
+    background-color: grey;
+}

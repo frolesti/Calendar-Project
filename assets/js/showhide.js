@@ -12,15 +12,18 @@ function closeModal() {
 let events = [{
     name: "polloloco",
     initialDate:"2020-11-29",
-    finalDate:"2020-11-30"
+    finalDate:"2020-11-30",
+    eventType:"meeting"
 },{
     name: "pollocuerdo",
     initialDate:"2020-11-01",
-    finalDate:"2020-11-05"
+    finalDate:"2020-11-05",
+    eventType:"personal"
 },{
     name: "pollito",
     initialDate:"2020-10-28",
-    finalDate:""
+    finalDate:"",
+    eventType:"study",
 }];
 const addEventInfo = (ev) => {
     ev.preventDefault();
@@ -30,8 +33,10 @@ const addEventInfo = (ev) => {
         finalDate: document.getElementById("finalDate").value,
         time: document.getElementById("time").value,
         description: document.getElementById("description").value,
+        eventType:document.getElementById("eventType").value
     }
     events.push(eventInfo);
+    //localStorage.setItem("events",JSON.stringify(events)) to improve
     document.querySelector("form").reset();
 }
 
