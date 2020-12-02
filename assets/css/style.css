@@ -178,6 +178,10 @@ input, textarea{
     text-overflow: ellipsis;
     overflow: hidden;
     max-width: 130px;
+    cursor: pointer;
+}
+.events__area p:hover{
+    transform: scale(1.1);
 }
 .meeting::before{
     content: '';
@@ -253,19 +257,28 @@ input, textarea{
     flex-direction: column;
     width: 40%;
     height: auto;
-    background-color: #c2c2c2;
+    background-color: #d0c0b1;
     border-radius: 5%;
+    font-size: 1.3rem;
+    border: 2px solid #4e4944;
 }
-.events-info button{
+#closeShow{
     margin-right: 10px;
     margin-top: 10px;
     align-self: flex-end;
     justify-self: flex-end;
+    color: brown;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
 }
 .events-info__card{
     display: flex;
     flex-direction: column;
     margin: 10px;
+}
+.events-info__card p:first-child{
+    font-weight: 600;
 }
 .visibility{
     visibility: visible;
