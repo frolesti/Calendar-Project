@@ -38,5 +38,5 @@ const btnAddEvent = (year,month,day)=>{
     }
     console.log(datum)
     document.getElementById("initialDate").value=datum+"T12:00"
-    document.getElementById("form-container").style.display = "initial";
+    document.getElementById("form-container").style.display = "flex";
 }

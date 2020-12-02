@@ -1,12 +1,13 @@
 //Funciones para abrir y cerrar la ventana de los eventos
 document.querySelector(".btn__event").addEventListener("click", ()=>{
-    document.getElementById("form-container").style.display = "initial";
+    document.getElementById("form-container").style.display = "flex";
 });
 
 //solucionar problemas con la accesibilidad de los divs ocultos
 document.getElementById("closeTag").addEventListener("click", ()=>{
     document.getElementById("event_form").reset();
     document.getElementById("form-container").style.display = "none";
+    document.querySelector(".endDate_div").classList.remove("show_div")
 })
 
 
@@ -96,6 +97,9 @@ function pressEsc(key){
     if(key.keyCode === 27){
         document.querySelector("form").reset();
         document.getElementById("form-container").style.display = "none";
+        if(containerEventShow.style.display==="flex"){
+            closeWindowShow(key)
+        }
     }
 }
 
