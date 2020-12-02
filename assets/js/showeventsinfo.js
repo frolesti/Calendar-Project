@@ -34,7 +34,7 @@ function showAllinfo(title,initial){
 containerEventShow.addEventListener('click',closeWindowShow)
 
 function closeWindowShow(e){
-    if(e.target.id=== "closeShow"|| e.target.id==="containerEventsInfo"){
+    if(e.target.id=== "closeShow"|| e.target.id==="containerEventsInfo" || e.target.id==="delete-event"){
         endDateShow.parentElement.style.display="block"
         descriptionShow.parentElement.style.display="block"
         containerEventShow.style.display="none"

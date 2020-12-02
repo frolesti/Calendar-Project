@@ -23,7 +23,7 @@ prevMonthDOM.addEventListener('click', ()=>lastMonth());
 nextMonthDOM.addEventListener('click', ()=>nextMonth());
 btnToday.addEventListener('click', ()=>goToday());
 
-//events=JSON.parse(localStorage.getItem("events"))
+events=JSON.parse(localStorage.getItem("events"))
 const goToday = () => {
     let today = new Date();
     currentMonth= today.getMonth();
