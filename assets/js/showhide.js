@@ -9,6 +9,7 @@ document.getElementById("closeTag").addEventListener("click", ()=>{
     document.getElementById("form-container").style.display = "none";
 })
 
+
 document.getElementById("cancelBtn").addEventListener("click", ()=>{
     document.getElementById("form-container").style.display = "none";
 })
@@ -65,12 +66,19 @@ const addEventInfo = (ev) => {
     else {
         events.push(eventInfo);
         localStorage.setItem("events",JSON.stringify(events))
+        document.getElementById("saveBtn").addEventListener("click", ()=>{
+            document.getElementById("form-container").style.display = "none"})
         document.querySelector("form").reset();
-        console.log(events);
     }
     
 }
 
+document.addEventListener("DOMContentLoaded", ()=> {
+    document.getElementById("saveBtn").addEventListener("click", addEventInfo);
+})
+
+
+//Cambia la clase de los elementos caducados
 const expiredEvent = () =>{
     let currentDate = new Date();
 
@@ -82,14 +90,9 @@ const expiredEvent = () =>{
             events[e].eventType = "expired";
         }
     }
-    
 }
 
 expiredEvent();
-
-document.addEventListener("DOMContentLoaded", ()=> {
-    document.getElementById("saveBtn").addEventListener("click", addEventInfo);
-})
 
 //TOAST---START
 const Toast = {
