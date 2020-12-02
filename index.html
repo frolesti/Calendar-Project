@@ -54,7 +54,7 @@
             
                 <div class="endDate_div">
                     <label for="endDate">End Date:</label>
-                    <input type="date" id="endDate">
+                    <input type="datetime-local" id="endDate">
                 </div>
             
                 <input type="checkbox" class="clickable_time" id="timeCheck" name="timeCheck">
@@ -91,7 +91,36 @@
             <!--Div con la ventana pop-up resumen del evento-->
             <div class="event-info"></div>
     </div>
+    <div class="container__events-info">
+        <div class="events-info">
+            <button id="closeShow" type="button">X</button>
+            <div class="events-info__card">
+                <p>Title:</p>
+                <p id="title_show"></p>
+            </div>
+            <div class="events-info__card">
+                <p>Initial Date:</p>
+                <p id="initial-date_show"></p>
+            </div>
+            <div class="events-info__card">
+                <p>End Date:</p>
+                <p id="end-date_show"></p>
+            </div>
+            <div class="events-info__card">
+                <p>Description:</p>
+                <p id="description_show"></p>
+            </div>
+            <div class="events-info__card">
+                <p>Event Type:</p>
+                <p id="type_show"></p>
+            </div>
+            <div class="events-info__card">
+                <button id="delete-event">Delete</button>
+            </div>
+        </div>
+    </div>
 <script src="assets/js/showhide.js"></script>
+<script src="assets/js/showeventsinfo.js"></script>
 <script src="assets/js/btnscalendar.js"></script>
 <script src="assets/js/events.js"></script>
 <script src="assets/js/main.js"></script>

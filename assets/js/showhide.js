@@ -67,10 +67,10 @@ const addEventInfo = (ev) => {
         events.push(eventInfo);
         localStorage.setItem("events",JSON.stringify(events))
         document.getElementById("saveBtn").addEventListener("click", ()=>{
-            document.getElementById("form-container").style.display = "none"})
+        document.getElementById("form-container").style.display = "none"})
         document.querySelector("form").reset();
+        printEvent();
     }
-    
 }
 
 document.addEventListener("DOMContentLoaded", ()=> {
