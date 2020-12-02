@@ -133,7 +133,7 @@ input, textarea{
     flex-direction: column;
     justify-content: flex-start;
 }
-.calendar__today p{
+.calendar__today .calendar__date{
     background-color:#e51a4c;
 }
 .calendar__last-days{
