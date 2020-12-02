@@ -16,7 +16,7 @@ const btnAddEvent = (year,month,day)=>{
         year--
     }
     if(day<10){
-        if(month<10){
+        if(month<9){
             if(month+1===0){
                 datum=`${year}-12-0${day}`
             }else{
@@ -26,7 +26,7 @@ const btnAddEvent = (year,month,day)=>{
             datum=`${year}-${month+1}-0${day}`
         }
     }else{
-        if(month<10){
+        if(month<9){
             if(month+1==0){
                 datum=`${year}-12-${day}`
             }else{
@@ -37,6 +37,6 @@ const btnAddEvent = (year,month,day)=>{
         }
     }
     console.log(datum)
-    document.getElementById("initialDate").value=datum
+    document.getElementById("initialDate").value=datum+"T12:00"
     document.getElementById("form-container").style.display = "initial";
 }
