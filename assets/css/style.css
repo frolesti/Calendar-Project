@@ -207,7 +207,35 @@ input, textarea{
     cursor: pointer;
 }
 
-
+.container__events-info{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.events-info{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+    background-color: #c2c2c2;
+    border-radius: 5%;
+}
+.events-info button{
+    margin-right: 10px;
+    margin-top: 10px;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+.events-info__card{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
 .visibility{
     visibility: visible;
 }

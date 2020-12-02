@@ -57,6 +57,9 @@ const addEventInfo = (ev) => {
         description: document.getElementById("description").value,
         eventType:document.getElementById("eventType").value
     }
+    if(finalDate=""){
+        finalDate=initialDate;
+    }
     events.push(eventInfo);
     localStorage.setItem("events",JSON.stringify(events))
     printEvent();

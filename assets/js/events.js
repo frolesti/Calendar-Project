@@ -8,12 +8,12 @@ const printEvent=()=>{
         if(e.initialDate.slice(8,9)==="0"){
             for(day of daysCurrentMonth){
                 if(e.initialDate.slice(9,10)===day.children[1].textContent){
-                    day.children[2].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
+                    day.children[2].insertAdjacentHTML("beforeend",`<p onclick="showAllinfo(${e.name},${e.initialDate},${e.finalDate},${e.description},${e.eventType})" class="${e.eventType}">${e.name}</p>`)
                 }}
         }else{
             for(day of daysCurrentMonth){
             if(e.initialDate.slice(8,10)===day.children[1].textContent){
-                day.children[2].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
+                day.children[2].insertAdjacentHTML("beforeend",`<p onclick="showAllinfo(${e.name},${e.initialDate},${e.finalDate},${e.description},${e.eventType})" class="${e.eventType}">${e.name}</p>`)
             }
             }
         }
@@ -21,7 +21,7 @@ const printEvent=()=>{
     lastMonthEvents.forEach(e=>{
             for(lastDay of daysLastMonth){
                 if(e.initialDate.slice(8,10)===lastDay.children[1].textContent){
-                    lastDay.children[2].insertAdjacentHTML("beforeend",`<p class="${e.eventType}">${e.name}</p>`)
+                    lastDay.children[2].insertAdjacentHTML("beforeend",`<p onclick="showAllinfo(${e.name},${e.initialDate},${e.finalDate},${e.description},${e.eventType})" class="${e.eventType}">${e.name}</p>`)
                 }
             }
         })
