@@ -1,4 +1,4 @@
-function showAllinfo(name,initial,end,description,type){
+function showAllinfo(name,initial){
     console.log("aqui")
     document.querySelector(".container__events-info").style.display="flex"
     document.getElementById("title_show").textContent=name;
