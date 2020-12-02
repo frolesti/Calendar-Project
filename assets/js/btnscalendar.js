@@ -34,5 +34,6 @@ const btnAddEvent = (year,month,day)=>{
         }
     }
     console.log(datum)
-    //lamar funcion con datum
+    document.getElementById("initialDate").value=datum
+    document.getElementById("form-container").style.display = "initial";
 }
