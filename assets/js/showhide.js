@@ -27,27 +27,7 @@ document.querySelector(".clickable_time").addEventListener("click", ()=>{
 
 //Funciones para guardar la información del formulario
 
-let events = [{
-    name: "polloloco",
-    initialDate:"2020-11-30",
-    finalDate:"2020-11-30",
-    eventType:"meeting"
-},{
-    name: "pollocuerdo",
-    initialDate:"2020-11-01",
-    finalDate:"2020-11-05",
-    eventType:"personal"
-},{
-    name: "pollito",
-    initialDate:"2020-12-28",
-    finalDate:"",
-    eventType:"study",
-},{
-    name: "pollito2",
-    initialDate:"2020-12-28",
-    finalDate:"",
-    eventType:"other",
-}];
+let events = [];
 
 
 const addEventInfo = (ev) => {
