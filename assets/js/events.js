@@ -3,6 +3,7 @@ const printEvent=()=>{
     let lastMonthEvents=events.filter(e=>filterLastMonth(e))
     let daysCurrentMonth=document.querySelectorAll(".calendar__month-days")
     let daysLastMonth=document.querySelectorAll(".calendar__last-days")
+    cleanEvents(daysCurrentMonth,daysLastMonth)
     monthEvents.forEach(e=>{
         if(e.initialDate.slice(8,9)==="0"){
             for(day of daysCurrentMonth){
@@ -50,4 +51,12 @@ function filterCurrentMonth(e){
         return false
     }
     return false
+}
+function cleanEvents(current,last){
+    for(day of current){
+        day.children[2].innerHTML="";
+    }
+    for(day of last){
+        day.children[2].innerHTML="";
+    }
 }
