@@ -3,16 +3,13 @@ document.querySelector(".btn__event").addEventListener("click", ()=>{
     document.getElementById("form-container").style.display = "flex";
 });
 
-//solucionar problemas con la accesibilidad de los divs ocultos
-document.getElementById("closeTag").addEventListener("click", ()=>{
-    document.getElementById("event_form").reset();
-    document.getElementById("form-container").style.display = "none";
-    document.querySelector(".endDate_div").classList.remove("show_div")
-})
-
-
-document.getElementById("cancelBtn").addEventListener("click", ()=>{
-    document.getElementById("form-container").style.display = "none";
+document.getElementById("form-container").addEventListener("click", (e)=>{
+    if(e.target.id=== "closeTag"|| e.target.id==="cancelBtn" || e.target.id==="form-container"){
+        document.getElementById("event_form").reset();
+        document.getElementById("form-container").style.display = "none";
+        document.querySelector(".endDate_div").classList.remove("show_div")
+        document.querySelector(".time_div").classList.remove("show_div");
+    }
 })
 
 //Show options in form event
@@ -42,8 +39,10 @@ const addEventInfo = (ev) => {
         eventType:document.getElementById("eventType").value
     }
 
-    if (eventInfo.name === ""|| eventInfo.initialDate === ""){
-        alert("You must enter the event's name and its initial date!");
+    if (eventInfo.name === ""|| eventInfo.initialDate === "" || eventInfo.name.length>60){
+        document.getElementById("message").classList.add("show_div")
+        document.getElementById("message").textContent="Missing fields"
+        setTimeout((e=>document.getElementById("message").classList.remove("show_div")),3000)
         return;
     }
     else if (eventInfo.finalDate === ""){
@@ -52,8 +51,9 @@ const addEventInfo = (ev) => {
         localStorage.setItem("events",JSON.stringify(events))
         document.getElementById("saveBtn").addEventListener("click", ()=>{
             document.getElementById("form-container").style.display = "none";
-            document.querySelector("form").reset();})
-        
+            document.querySelector("form").reset();
+            document.querySelector(".endDate_div").classList.remove("show_div")
+            document.querySelector(".time_div").classList.remove("show_div");})
         printEvent();
     }
 
@@ -62,9 +62,9 @@ const addEventInfo = (ev) => {
         localStorage.setItem("events",JSON.stringify(events))
         document.getElementById("saveBtn").addEventListener("click", ()=>{
             document.getElementById("form-container").style.display = "none";
-            document.querySelector("form").reset();})
-            
-        
+            document.querySelector("form").reset();
+            document.querySelector(".endDate_div").classList.remove("show_div")
+            document.querySelector(".time_div").classList.remove("show_div");})
         printEvent();
     }
 }

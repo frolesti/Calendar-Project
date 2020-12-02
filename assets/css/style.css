@@ -42,7 +42,7 @@ p{
     top: 0;
     justify-content: center;
     align-items: center;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -62,7 +62,14 @@ input, textarea{
     border: 2px ridge;
     border-radius: 5px;
 }
-
+.message__show{
+    display: none;
+    color: #d22c21;
+    background-color: eeeeee;
+    border-radius: 3%;
+    border: 2px ridge darkgrey;
+    text-align: center;
+}
 #closeTag {
     height: 20px;
     width: 20px;
@@ -251,7 +258,7 @@ input, textarea{
     border-radius: 3%;
     border: 2px solid #4e4944;
     font-size: 1.3rem;
-    padding: 0 5px 5px 5px;
+    padding: 0 8px 8px 8px;
 }
 #closeShow{
     margin-right: 10px;
