@@ -57,11 +57,91 @@ const addEventInfo = (ev) => {
         description: document.getElementById("description").value,
         eventType:document.getElementById("eventType").value
     }
-    events.push(eventInfo);
-    localStorage.setItem("events",JSON.stringify(events))
-    document.querySelector("form").reset();
+    if (eventInfo.name.length < 1|| eventInfo.initialDate.value === null){
+        alert("You must enter the event's name and its initial date!");
+        return;
+    }
+
+    else {
+        events.push(eventInfo);
+        localStorage.setItem("events",JSON.stringify(events))
+        document.querySelector("form").reset();
+        console.log(events);
+    }
+    
 }
+
+const expiredEvent = () =>{
+    let currentDate = new Date();
+
+    for (e in events){
+        const initDate = new Date (events[e].initialDate);
+        const currentDate = new Date();
+
+        if (currentDate.getTime() > initDate.getTime()){
+            events[e].eventType = "expired";
+        }
+    }
+    
+}
+
+expiredEvent();
 
 document.addEventListener("DOMContentLoaded", ()=> {
     document.getElementById("saveBtn").addEventListener("click", addEventInfo);
 })
+
+//TOAST---START
+const Toast = {
+
+    hideTimeMs: 10000, // 10 seconds
+    scheduleIntervalMs: 1000 * 10, // 1 minute
+    reloadTimeoutMs: 10000,
+
+    init() {
+        this.el = document.createElement("div");
+        this.el.className = "toast";
+        document.body.appendChild(this.el);
+
+        this.schedule();
+    },
+
+    show(message){
+        this.el.textContent = message;
+        this.el.classList.add('toast--visible');
+
+        setTimeout(() => {
+            this.el.classList.remove('toast--visible');
+        }, this.hideTimeMs);
+    },
+
+
+    schedule(){ 
+        const msg_array = [
+            this.start_message,
+            this.msg1,
+            this.msg2,
+            this.msg3,
+            this.msg4,
+            this.reset_message
+        ];
+
+        msg_array.forEach((msg, i) => {
+            const timeoutInMiliseconds = this.scheduleIntervalMs * i // ms * s * index
+            setTimeout(() => {
+                this.show(msg)
+
+                const isLastElement = i === msg_array.length - 1
+                if (isLastElement) {
+                    this.waitAndReloadPage()
+                }
+            }, timeoutInMiliseconds)
+        })
+    },
+
+    waitAndReloadPage() {
+        setTimeout(() => location.reload(), this.reloadTimeoutMs)
+    }
+};
+
+

@@ -44,6 +44,7 @@ p{
     transform: translate(-50%, -50%);
     justify-content: right;
     background-color: rgb(255, 245, 231);
+    border: 5px ridge whitesmoke;
     
     display: none;
 }
@@ -71,6 +72,7 @@ input, textarea{
     top: -20px;
     left: 250px;
     color: brown;
+    cursor: pointer;
 }
 
 #btn-container {
@@ -78,7 +80,6 @@ input, textarea{
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    padding: 25px 0px;
 }
 
 .endDate_div {
@@ -90,6 +91,21 @@ input, textarea{
 
 .show_div{
     display: block;
+}
+
+.formBtn {
+    background: wheat;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 0.05rem;
+    margin-top: 0.5rem;
+    padding: 10px, 16px;
+    text-transform: uppercase;
+    height: 35px;
+    width: 100px
 }
 /*Form styling---END*/
 
@@ -197,6 +213,21 @@ input, textarea{
     margin: 0 2px;
     border-radius: 7.5px;
     background-color: grey;
+}
+
+.expired {
+    color: gray;
+    opacity: 50%;
+
+}
+.expired::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 2px;
+    border-radius: 7.5px;
+    background-color: red;
 }
 /*EVENTS STYLING---END*/
 .btn__new{
