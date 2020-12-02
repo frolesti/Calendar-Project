@@ -48,6 +48,8 @@ let events = [{
     finalDate:"",
     eventType:"other",
 }];
+
+
 const addEventInfo = (ev) => {
     ev.preventDefault();
     let eventInfo = {
@@ -58,24 +60,36 @@ const addEventInfo = (ev) => {
         description: document.getElementById("description").value,
         eventType:document.getElementById("eventType").value
     }
-    if (eventInfo.name.length < 1|| eventInfo.initialDate.value === null){
+
+    if (eventInfo.name === ""|| eventInfo.initialDate === ""){
         alert("You must enter the event's name and its initial date!");
         return;
+    }
+    else if (eventInfo.finalDate === ""){
+        eventInfo.finalDate = eventInfo.initialDate;
+        events.push(eventInfo);
+        localStorage.setItem("events",JSON.stringify(events))
+        document.getElementById("saveBtn").addEventListener("click", ()=>{
+            document.getElementById("form-container").style.display = "none";
+            document.querySelector("form").reset();})
+        
+        printEvent();
     }
 
     else {
         events.push(eventInfo);
         localStorage.setItem("events",JSON.stringify(events))
         document.getElementById("saveBtn").addEventListener("click", ()=>{
-        document.getElementById("form-container").style.display = "none"})
-        document.querySelector("form").reset();
+            document.getElementById("form-container").style.display = "none";
+            document.querySelector("form").reset();})
+            
+        
         printEvent();
     }
 }
 
 document.addEventListener("DOMContentLoaded", ()=> {
-    document.getElementById("saveBtn").addEventListener("click", addEventInfo);
-})
+    document.getElementById("saveBtn").addEventListener("click", addEventInfo);})
 
 
 //Cambia la clase de los elementos caducados
@@ -93,6 +107,27 @@ const expiredEvent = () =>{
 }
 
 expiredEvent();
+
+
+// Función para cerrar la ventana de eventos con ESC
+document.addEventListener("keydown", pressEsc, false);
+
+function pressEsc(key){
+    if(key.keyCode === 27){
+        document.querySelector("form").reset();
+        document.getElementById("form-container").style.display = "none";
+    }
+}
+
+//
+
+function checkDate(){
+    let momentDate = new Date();
+    for (ev in localStorage.getItem("events")){
+        console.log(ev);
+    }
+}
+
 
 //TOAST---START
 const Toast = {
