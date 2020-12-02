@@ -12,6 +12,9 @@ const btnHidden = (e) =>{
 
 const btnAddEvent = (year,month,day)=>{
     let datum
+    if(month===-1){
+        year--
+    }
     if(day<10){
         if(month<10){
             if(month+1===0){
@@ -34,5 +37,6 @@ const btnAddEvent = (year,month,day)=>{
         }
     }
     console.log(datum)
-    //lamar funcion con datum
+    document.getElementById("initialDate").value=datum
+    document.getElementById("form-container").style.display = "initial";
 }

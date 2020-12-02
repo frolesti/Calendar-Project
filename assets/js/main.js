@@ -58,7 +58,6 @@ const writeMonth = (month) => {
         }
     }
     printEvent(month)
-    btnsNew=document.querySelectorAll(".btn__new")
 }
 
 const getTotalDays = month => {

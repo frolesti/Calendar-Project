@@ -59,6 +59,7 @@ const addEventInfo = (ev) => {
     }
     events.push(eventInfo);
     localStorage.setItem("events",JSON.stringify(events))
+    printEvent();
     document.querySelector("form").reset();
 }
 

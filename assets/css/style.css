@@ -30,10 +30,9 @@ p{
     border-radius: 50%;
     background-color: rgba(255,255,255,0.5);
 }
-.header button:focus{
-    outline: 0;
+.header button:hover{
+    transform: scale(1.1);
 }
-
 /*Forms styling---START*/
 #form-container {
     width: 70%;
@@ -85,8 +84,8 @@ input, textarea{
     display: none;
 }
 .time_div{
-     display: none;
- }
+    display: none;
+}
 
 .show_div{
     display: block;
@@ -151,6 +150,9 @@ input, textarea{
     cursor: pointer;
     color: #18171c;
 }
+.calendar__next:hover, .calendar__prev:hover{
+    transform: scale(1.2);
+}
 /*Calendar styling---END*/
 
 /*Events styling---START*/
@@ -202,7 +204,9 @@ input, textarea{
 .btn__new{
     position: absolute;
     visibility: hidden;
+    cursor: pointer;
 }
+
 
 .visibility{
     visibility: visible;
