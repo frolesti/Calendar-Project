@@ -106,11 +106,23 @@ function pressEsc(key){
 //
 
 function checkDate(){
-    let momentDate = new Date();
-    for (ev in localStorage.getItem("events")){
-        console.log(ev);
-    }
+    setInterval(()=>{
+        for (e in events){
+            const finDate = new Date (events[e].finalDate);
+            const currentDate = new Date();
+            if (finDate.getTime() < currentDate.getTime()){
+                document.getElementById("popup_div").insertAdjacentHTML("afterend", `
+                <div class="events-info">
+                    <p>${e.name} has expired!</p>
+                </div>`)
+            }
+        }
+    }, 600000)
 }
+
+checkDate();
+
+
 
 
 //TOAST---START
@@ -165,5 +177,3 @@ const Toast = {
         setTimeout(() => location.reload(), this.reloadTimeoutMs)
     }
 };
-
-
