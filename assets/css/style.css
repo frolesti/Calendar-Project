@@ -292,3 +292,19 @@ input, textarea{
 .visibility{
     visibility: visible;
 }
+
+
+#popup_div {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 250px;
+    display: none;
+}
+
+#popup_div div{
+    display: none;
+}
+

@@ -75,19 +75,17 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
 //Cambia la clase de los elementos caducados
 const expiredEvent = () =>{
-    let currentDate = new Date();
 
     for (e in events){
-        const initDate = new Date (events[e].initialDate);
-        const currentDate = new Date();
+        let initDate = new Date (events[e].initialDate);
+        let currentDate = new Date();
 
         if (currentDate.getTime() > initDate.getTime()){
             events[e].eventType = "expired";
         }
     }
+    printEvent();
 }
-
-expiredEvent();
 
 
 // Función para cerrar la ventana de eventos con ESC
@@ -108,20 +106,51 @@ function pressEsc(key){
 function checkDate(){
     setInterval(()=>{
         for (e in events){
-            const finDate = new Date (events[e].finalDate);
-            const currentDate = new Date();
-            if (finDate.getTime() < currentDate.getTime()){
-                document.getElementById("popup_div").insertAdjacentHTML("afterend", `
-                <div class="events-info">
-                    <p>${e.name} has expired!</p>
-                </div>`)
+            let finDate = new Date(events[e].finalDate);
+            let nowDate = new Date();
+
+            if (finDate.getTime() < nowDate.getTime() && events[e].eventType !== "expired"){
+
+                document.getElementById("popup_div").children[0].insertAdjacentHTML ("beforeend",`<p>${events[e].name} has expired, its end date was ${finDate.toLocaleDateString()+ " " + finDate.toLocaleTimeString()}</p>`);
+                events[e].eventType = "expired";
+                document.getElementById("popup_div").style.display = "block";
+                document.getElementById("popup_div").children[0].style.display = "block";
+                expiredEvent();
+
+                setTimeout(()=>{
+                    document.getElementById("popup_div").style.display = "none";
+                    document.getElementById("popup_div").children[0].style.display = "none";
+                    document.getElementById("popup_div").children[0].innerHTML = "";
+                    
+                }, 3000)
+                
             }
+            checkTime(e);
         }
-    }, 600000)
+    }, 10000)
 }
 
 checkDate();
 
+function checkTime(e) {
+    let msInMin = 60*1000
+    let newDate = new Date();
+    let inDate = new Date(events[e].initialDate);
+    let dif = Math.abs(inDate.getTime() - newDate.getTime())
+
+    if(dif < events[e].time * msInMin && events[e].eventType !== "data-warning" && events[e].eventType !== "expired"){
+    
+        events[e].eventType = "data-warning";
+        document.getElementById("popup_div").children[1].insertAdjacentHTML ("beforeend", `<p> ${events[e].name} will start in less than ${events[e].time} minutes </p>`);
+        document.getElementById("popup_div").style.display = "block";
+        document.getElementById("popup_div").children[1].style.display = "block";
+        setTimeout(()=>{
+            document.getElementById("popup_div").style.display = "none";
+            document.getElementById("popup_div").children[1].style.display = "none";
+            document.getElementById("popup_div").children[1].innerHTML = "";
+        }, 3000)
+    }
+}
 
 
 
