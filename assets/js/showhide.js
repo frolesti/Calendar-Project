@@ -49,28 +49,25 @@ const addEventInfo = (ev) => {
         eventInfo.finalDate = eventInfo.initialDate;
         events.push(eventInfo);
         localStorage.setItem("events",JSON.stringify(events))
-        document.getElementById("saveBtn").addEventListener("click", ()=>{
-            document.getElementById("form-container").style.display = "none";
-            document.querySelector("form").reset();
-            document.querySelector(".endDate_div").classList.remove("show_div")
-            document.querySelector(".time_div").classList.remove("show_div");})
+        document.getElementById("form-container").style.display = "none";
+        document.querySelector("form").reset();
+        document.querySelector(".endDate_div").classList.remove("show_div")
+        document.querySelector(".time_div").classList.remove("show_div");
         printEvent();
     }
 
     else {
         events.push(eventInfo);
         localStorage.setItem("events",JSON.stringify(events))
-        document.getElementById("saveBtn").addEventListener("click", ()=>{
-            document.getElementById("form-container").style.display = "none";
-            document.querySelector("form").reset();
-            document.querySelector(".endDate_div").classList.remove("show_div")
-            document.querySelector(".time_div").classList.remove("show_div");})
+        document.getElementById("form-container").style.display = "none";
+        document.querySelector("form").reset();
+        document.querySelector(".endDate_div").classList.remove("show_div")
+        document.querySelector(".time_div").classList.remove("show_div");
         printEvent();
     }
 }
 
-document.addEventListener("DOMContentLoaded", ()=> {
-    document.getElementById("saveBtn").addEventListener("click", addEventInfo);})
+    document.getElementById("saveBtn").addEventListener("click", addEventInfo);
 
 
 //Cambia la clase de los elementos caducados
@@ -138,9 +135,9 @@ function checkTime(e) {
     let inDate = new Date(events[e].initialDate);
     let dif = Math.abs(inDate.getTime() - newDate.getTime())
 
-    if(dif < events[e].time * msInMin && events[e].eventType !== "data-warning" && events[e].eventType !== "expired"){
+    if(dif < events[e].time * msInMin && events[e].eventType !== "notice" && events[e].eventType !== "expired"){
     
-        events[e].eventType = "data-warning";
+        events[e].eventType = "notice";
         document.getElementById("popup_div").children[1].insertAdjacentHTML ("beforeend", `<p> ${events[e].name} will start in less than ${events[e].time} minutes </p>`);
         document.getElementById("popup_div").style.display = "block";
         document.getElementById("popup_div").children[1].style.display = "block";
